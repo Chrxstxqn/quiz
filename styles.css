@@ -1,0 +1,240 @@
+/* Stile generale del sito */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    /* Permette lo scroll verticale */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Titolo Animato */
+.center {
+    position: absolute;
+    top: 0%;
+    /* Aumentato lo spazio sopra il titolo */
+    left: 5%;
+    transform: perspective(1000px) translate(-50%, -50%);
+    transform: skewY(15deg);
+    transition: 0.5s;
+}
+
+.center:hover {
+    transform: skewY(0deg);
+}
+
+.center h1 {
+    position: relative;
+    font-size: 6em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.center h1 span {
+    display: block;
+    position: absolute;
+    color: #fff;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease, color 0.8s ease;
+}
+
+.center h1 span:nth-child(1) {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.center h1 span:nth-child(2) {
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+    color: #5E17EB;
+    transform: skewX(-60deg);
+}
+
+.center h1 span:nth-child(3) {
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: skewX(60deg);
+}
+
+.center:hover h1 span:nth-child(2),
+.center:hover h1 span:nth-child(3) {
+    transform: skewX(0deg);
+    color: #fff;
+}
+
+/* TEXT BY KOZAK */
+.center2 {
+    position: absolute;
+        top: 10%;
+        /* Aumentato lo spazio sopra il titolo */
+        left: 5%;
+        transform: perspective(1000px) translate(-50%, -50%);
+        transform: skewY(15deg);
+        transition: 0.5s;
+}
+
+.center2:hover {
+    transform: skewY(0deg);
+}
+
+.center2 h1 {
+    position: relative;
+    font-size: 1em;
+    letter-spacing: 5px;
+}
+
+.center2 h1 span {
+    display: block;
+    position: absolute;
+    color: #fff;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease, color 0.8s ease;
+}
+
+.center2 h1 span:nth-child(1) {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.center2 h1 span:nth-child(2) {
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+    color: #5E17EB;
+    transform: skewX(-60deg);
+}
+
+.center2 h1 span:nth-child(3) {
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: skewX(60deg);
+}
+
+.center2:hover h1 span:nth-child(2),
+.center2:hover h1 span:nth-child(3) {
+    transform: skewX(0deg);
+    color: #fff;
+}
+
+/* Container delle colonne */
+.columns-container {
+    display: flex;
+    flex-direction: column;
+    /* Dispone le colonne in verticale */
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    /* Spazio tra il sottotitolo e i bottoni */
+}
+
+/* Stile delle colonne */
+.column {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Stile dei titoli delle colonne */
+.column h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #5E17EB;
+    border-bottom: 2px solid #5E17EB;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Divisore tra le colonne */
+.divider {
+    width: 100%;
+    /* Divisore ora riempie lo spazio orizzontale */
+    height: 2px;
+    /* Cambiato a un divisore orizzontale */
+    background-color: #5E17EB;
+    margin: 10px 0;
+    opacity: 0.7;
+}
+
+/* Stile dei bottoni */
+.button-86 {
+    all: unset;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: #f0f0f0;
+    text-align: center;
+    background: linear-gradient(45deg, #5E17EB, #3415A0);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.button-86::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.button-86:hover {
+    transform: scale(1.05);
+}
+
+.button-86:hover::before {
+    opacity: 1;
+}
+
+.button-86:active {
+    transform: scale(0.98);
+}
+
+/* Media Queries per Responsività */
+@media (max-width: 768px) {
+    .center h1 {
+        font-size: 3em;
+    }
+
+    .columns-container {
+        gap: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center h1 {
+        font-size: 2.5em;
+    }
+
+    .column h2 {
+        font-size: 1.5em;
+    }
+
+    .button-86 {
+        max-width: 180px;
+        font-size: 0.9em;
+    }
+}
