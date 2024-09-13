@@ -101,7 +101,7 @@ main {
 }
 
 .quiz-category {
-    background-color: white;
+    background-color: rgba(171, 167, 167, 0.464);
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 10px;
